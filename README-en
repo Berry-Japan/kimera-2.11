@@ -1,0 +1,120 @@
+                    Kimera Version 2.11
+          -- Kanji Input MEthod by RAgamuffin --
+
+-About Kimera
+Kimera is an input method (XIM) for the X Window System utilizing
+the Qt4 toolkit that provides Japanese language input support. It
+provides Kanji conversion via Canna or Anthy, as well as supporting
+the ability to assign input styles. We are also considering a 
+simple key assign selection method like the one used in Windows.
+
+Kimera has the following special features:
+ - A simple GUI.
+ - Support for a kana to Kanji conversion engine, you can choose from
+   Canna or Anthy.
+ - Input Prediction support (requires Anthy)
+ - Key Assign Support (select from 4 styles, MS-IME, ATOK, Kinput2,
+   and VJE styles)
+ - Pre-edit display characteristic customization. (change the color,
+   background and style of characters that are being edited)
+
+-Install
+Please see the INSTALL file.
+
+-Invoking
+You must set LANG environment variable to a proper value to encode
+characters. If it was set, don't change it.
+example:
+ export LANG=ja_JP.eucJP
+
+After confirming that Canna is running, or that Anthy is installed
+you can start Kimera with:
+ $ kimera &
+
+After starting Kimera there will be a dictionary file as well as a
+settings file created in the $HOME/.kimera directory.
+
+If you execute kimera on the machine that SCIM is running in backend,
+kimera may freeze. In the case, stop SCIM and check scim-launcher
+is not run. Also check SCIM applications is not run in the system
+tray, then execute kimera.
+
+If you use immodule of Qt/GTK+, set up environment variables XIM
+protocol.
+ export QT_IM_MODULE=xim
+ export GTK_IM_MODULE=xim
+
+-Japanese Input
+In order to verify that everything is running properly configure
+your environment variables and run a program. For your reference
+you can try the example below. Set your XMODIFIERS environment
+variable and run a program that supports the XIM protocol.
+
+example:
+  $ XMODIFIERS="@im=kimera" kterm -xim &
+or
+  $ XMODIFIERS="@im=kimera" xemacs &
+
+By default the half width/full width (2-byte kanji) key will start
+Japanese input by means of romaji. When the Kimera toolbar changes
+to a hiragana "a" it has detected the start of japanese input. You
+can change this Japanese input key in the properties under
+"nyuuryoku kaishi ki-". If it wont switch into Japanese input mode,
+make sure that the input change trigger isn't already set by xev.
+It's normally Zenkaku_Hankaku or Kanji. If you still can't switch
+into Japanese mode, try a different trigger (such as shift-space)
+and re-try the install from the beginning.
+
+You can set up environment variables in your .bash_profile file
+using your shell's various faculties. For example Bash users will
+do something like:
+
+ XMODIFIERS="@im=kimera"
+ export XMODIFIERS
+
+-Input Prediction
+After installing Anthy (7100b and above), go to the options to
+"conversion engine" and turn on "use input prediction" to use the
+prediction feature. If you type type a few characters the normal
+input conversion display should appear. You can use the prediction
+on this display by pressing Shift+Enter.
+
+-Simple Phrase Conversion
+While inputting something, hit CTRL-Space to use simple phrase
+conversion. This is useful for inputting common phrases like your
+full name, or company name.
+
+-Changing Key Settings
+In the properties, under "input", and "change key settings" you can
+change the key behavior to one of the following four styles: MS-IME
+style, ATOK style, Kinput2 style and VJE style.
+
+-Dictionary File
+To convert from romaji to hiragana Kimera reads a file at invocation.
+This dictionary file is created  in $HOME/.kimera/dic-${VERSION} the
+first time Kimera is run. If the file already exists it will not be
+overwritten, previous changes to the dictionary file will remain the
+next time Kimera is run.
+
+To return to the defaults, simply delete the dictionary file. To
+return all Kimera settings to defaults, delete the entire .kimera
+directory. It will be created again the next time Kimera is executed.
+
+-Tested
+This software has been tested on the following distributions:
+ Fedora 9
+
+Please report any success on other distributions toe the author.
+
+-Home Page
+The official Kimera Homepage is
+http://kimear.sourceforge.jp/
+
+-Bug Reports
+If you experience a bug, please attach the $HOME/.kimera/kimera.log
+file to your email, and any related  output and contact the author(s).
+The log file is overwritten every time kimera is run, so make sure to
+copy the log immediately after experiencing a bug.
+
+-Thanks
+ James Rubingh, English translation

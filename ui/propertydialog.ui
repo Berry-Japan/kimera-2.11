@@ -1,0 +1,983 @@
+<ui version="4.0" >
+ <class>PropertyDialog</class>
+ <widget class="QDialog" name="PropertyDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>410</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy>
+    <hsizetype>0</hsizetype>
+    <vsizetype>0</vsizetype>
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>410</width>
+    <height>350</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Kimera Property</string>
+  </property>
+  <widget class="QPushButton" name="_cancelbtn" >
+   <property name="geometry" >
+    <rect>
+     <x>220</x>
+     <y>300</y>
+     <width>110</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>キャンセル</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="_okbtn" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>300</y>
+     <width>110</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>ＯＫ</string>
+   </property>
+   <property name="shortcut" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="_tabwdg" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>390</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="currentIndex" >
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="_tab1" >
+    <attribute name="title" >
+     <string>基本</string>
+    </attribute>
+    <widget class="QComboBox" name="_cmbstartkey" >
+     <property name="geometry" >
+      <rect>
+       <x>210</x>
+       <y>20</y>
+       <width>160</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text" >
+       <string>Kanji</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Zenkaku_Hankaku</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Shift+Space</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Ctrl+Space</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Ctrl+\</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="_lblstartkey" >
+     <property name="geometry" >
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>170</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="text" >
+      <string>日本語入力の切替キー</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="_cmbinputmode" >
+     <property name="geometry" >
+      <rect>
+       <x>210</x>
+       <y>70</y>
+       <width>160</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text" >
+       <string>ひらがな</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>カタカナ</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>半角カナ</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>全角英数</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="_lblinputmode" >
+     <property name="geometry" >
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>170</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="text" >
+      <string>初期入力モード</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="_cmbinputstyle" >
+     <property name="geometry" >
+      <rect>
+       <x>210</x>
+       <y>120</y>
+       <width>160</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text" >
+       <string>ローマ字入力</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>かな入力</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="_lblinputstyle" >
+     <property name="geometry" >
+      <rect>
+       <x>30</x>
+       <y>120</y>
+       <width>170</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>初期入力方式</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="_chktrayicon" >
+     <property name="geometry" >
+      <rect>
+       <x>30</x>
+       <y>170</y>
+       <width>340</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>ツールバーをシステムトレイに格納する</string>
+     </property>
+     <property name="shortcut" >
+      <string/>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="_chkdispbar" >
+     <property name="geometry" >
+      <rect>
+       <x>30</x>
+       <y>200</y>
+       <width>340</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>日本語入力がオフの時にツールバーを非表示にする</string>
+     </property>
+     <property name="shortcut" >
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="_tab2" >
+    <attribute name="title" >
+     <string>入力</string>
+    </attribute>
+    <widget class="QComboBox" name="_cmbsymbol" >
+     <property name="geometry" >
+      <rect>
+       <x>290</x>
+       <y>110</y>
+       <width>70</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <item>
+      <property name="text" >
+       <string>・</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>／</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="_cmbbracket" >
+     <property name="geometry" >
+      <rect>
+       <x>290</x>
+       <y>150</y>
+       <width>70</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <item>
+      <property name="text" >
+       <string>「」</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>［］</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="_cmbkuten" >
+     <property name="geometry" >
+      <rect>
+       <x>90</x>
+       <y>150</y>
+       <width>70</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <item>
+      <property name="text" >
+       <string>。</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>．</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="_cmbtouten" >
+     <property name="geometry" >
+      <rect>
+       <x>90</x>
+       <y>110</y>
+       <width>70</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <item>
+      <property name="text" >
+       <string>、</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>，</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="_btnkeyassign" >
+     <property name="geometry" >
+      <rect>
+       <x>220</x>
+       <y>200</y>
+       <width>140</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>キー設定を変更...</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="_cmbtenkey" >
+     <property name="geometry" >
+      <rect>
+       <x>220</x>
+       <y>60</y>
+       <width>140</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text" >
+       <string>入力モードに従う</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>半角</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>全角</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="_lbltenkey" >
+     <property name="geometry" >
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>150</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="text" >
+      <string>テンキーからの入力</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="_lblspacekey" >
+     <property name="geometry" >
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>150</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="text" >
+      <string>スペースの入力</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="_lblkuten" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>50</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>句点</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="_lblsymbol" >
+     <property name="geometry" >
+      <rect>
+       <x>220</x>
+       <y>110</y>
+       <width>50</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>記号</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="_lblbracket" >
+     <property name="geometry" >
+      <rect>
+       <x>220</x>
+       <y>150</y>
+       <width>50</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>括弧</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="_cmbspacekey" >
+     <property name="geometry" >
+      <rect>
+       <x>220</x>
+       <y>20</y>
+       <width>140</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text" >
+       <string>入力モードに従う</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>半角</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>全角</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="_lbltouten" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>110</y>
+       <width>50</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>読点</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="_tab4" >
+    <attribute name="title" >
+     <string>色</string>
+    </attribute>
+    <widget class="QComboBox" name="_cmbloadcolor" >
+     <property name="geometry" >
+      <rect>
+       <x>210</x>
+       <y>30</y>
+       <width>140</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="_colorsetting" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>370</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="lineWidth" >
+      <number>2</number>
+     </property>
+     <property name="verticalScrollBarPolicy" >
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy" >
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="dragDropOverwriteMode" >
+      <bool>false</bool>
+     </property>
+     <property name="rowCount" >
+      <number>4</number>
+     </property>
+     <property name="columnCount" >
+      <number>3</number>
+     </property>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <column/>
+     <column/>
+     <column/>
+    </widget>
+    <widget class="QLabel" name="_lblsetting" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>180</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Dingbats</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>文字／背景色設定の読み込み</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="_tab3" >
+    <attribute name="title" >
+     <string>変換エンジン</string>
+    </attribute>
+    <widget class="QComboBox" name="_cmbkanjieng" >
+     <property name="geometry" >
+      <rect>
+       <x>220</x>
+       <y>13</y>
+       <width>140</width>
+       <height>30</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="_lblkanjisys" >
+     <property name="geometry" >
+      <rect>
+       <x>30</x>
+       <y>13</y>
+       <width>160</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>かな漢字変換エンジン</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="_grppredict" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>151</y>
+       <width>370</width>
+       <height>90</height>
+      </rect>
+     </property>
+     <property name="title" >
+      <string>入力予測機能を有効にする</string>
+     </property>
+     <property name="checkable" >
+      <bool>true</bool>
+     </property>
+     <widget class="QLabel" name="_lblpredict" >
+      <property name="geometry" >
+       <rect>
+        <x>25</x>
+        <y>26</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text" >
+       <string>入力予測エンジン</string>
+      </property>
+      <property name="wordWrap" >
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="_cmbpredict" >
+      <property name="geometry" >
+       <rect>
+        <x>210</x>
+        <y>26</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="_lblpredictmemo" >
+      <property name="enabled" >
+       <bool>false</bool>
+      </property>
+      <property name="geometry" >
+       <rect>
+        <x>26</x>
+        <y>66</y>
+        <width>330</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="text" >
+       <string>＊ 予測された変換候補は Shift+Enter キーで確定します。</string>
+      </property>
+      <property name="alignment" >
+       <set>Qt::AlignTop</set>
+      </property>
+      <property name="wordWrap" >
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="_grpremote" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>53</y>
+       <width>370</width>
+       <height>90</height>
+      </rect>
+     </property>
+     <property name="title" >
+      <string>リモートのかな漢字変換エンジンを使う</string>
+     </property>
+     <property name="checkable" >
+      <bool>true</bool>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
+     <widget class="QLineEdit" name="_edtport" >
+      <property name="geometry" >
+       <rect>
+        <x>170</x>
+        <y>57</y>
+        <width>180</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="_lblport" >
+      <property name="geometry" >
+       <rect>
+        <x>34</x>
+        <y>57</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text" >
+       <string>ポート番号</string>
+      </property>
+      <property name="wordWrap" >
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="_lblsvrname" >
+      <property name="geometry" >
+       <rect>
+        <x>34</x>
+        <y>26</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text" >
+       <string>サーバ</string>
+      </property>
+      <property name="wordWrap" >
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="_edtsvrname" >
+      <property name="geometry" >
+       <rect>
+        <x>170</x>
+        <y>26</y>
+        <width>180</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="TabPage" >
+    <attribute name="title" >
+     <string>辞書ツール</string>
+    </attribute>
+    <widget class="QGroupBox" name="_grpcmd" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>370</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title" >
+      <string>辞書ツールのコマンド</string>
+     </property>
+     <widget class="QPushButton" name="_cmdselectbtn" >
+      <property name="geometry" >
+       <rect>
+        <x>260</x>
+        <y>80</y>
+        <width>90</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text" >
+       <string>参照...</string>
+      </property>
+      <property name="shortcut" >
+       <string/>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="_cmbcmd" >
+      <property name="geometry" >
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>350</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="editable" >
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text" >
+        <string>kasumi</string>
+       </property>
+      </item>
+      <item>
+       <property name="text" >
+        <string>sumika</string>
+       </property>
+      </item>
+      <item>
+       <property name="text" >
+        <string>kannadic</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="_tab5" >
+    <attribute name="title" >
+     <string>情報</string>
+    </attribute>
+    <widget class="QLabel" name="_lblaboutkimera" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>350</width>
+       <height>220</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources/>
+ <connections/>
+</ui>

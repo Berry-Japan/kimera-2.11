@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# Kimera startup sctipt
+#
+
+KIMERA_BIN=kimera-bin
+KIMERA_LOCALDIR=$HOME/.kimera
+PATH=/sbin:$PATH
+DISPLAY_NO=`echo $DISPLAY | cut -d: -f2 | cut -d. -f1`
+LOG=$KIMERA_LOCALDIR/kimera_${DISPLAY_NO}.log
+PIDFILE=$KIMERA_LOCALDIR/kimera-bin_${DISPLAY_NO}.pid
+LOCKFILE=/tmp/.kimera_`whoami 2>/dev/null`.lock
+
+[ -d "$KIMERA_LOCALDIR" ] || mkdir -p $KIMERA_LOCALDIR
+[ -f "$PIDFILE" ] || touch $PIDFILE
+
+if ! ln -s $PIDFILE $LOCKFILE >/dev/null 2>&1; then
+    echo "lock file exists: $LOCKFILE"
+    exit 1
+fi
+
+trap 'rm -f $LOCKFILE; exit' EXIT
+
+# Checks double execution
+PID=`cat $PIDFILE`
+if [ -n "$PID" -a "$PID" = "`pidof \`basename $KIMERA_BIN\` 2>/dev/null`" ]; then
+    echo "kimera already executing (pid:${PID})"
+    exit 1
+fi
+
+# Execute Kimera
+unset XMODIFIERS
+echo $$ > $PIDFILE
+exec $KIMERA_BIN >$LOG 2>&1

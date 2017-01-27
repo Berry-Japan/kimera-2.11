@@ -1,0 +1,79 @@
+                     Installing Kimera
+
+■ 必要なパッケージ
+Qt Tool Kit(4.2 以降)、X 開発環境が必要です。Anthy を漢字変換エンジン
+として使用する場合は Anthy 開発環境が必要ですが、無くともオプションに
+よりビルド可能です。この場合 Anthy を漢字変換エンジンとして選択できな
+くなってしまいます。また、Canna については libcanna をリンクしていな
+いので、無くとも Kimera のビルドが可能です。
+
+ ※ Kimera 2.00 以降では Qt4 が必要になりました。
+
+■ ビルド
+環境変数 QTDIR および QMAKESPEC が設定されていなければ、以下の URL を
+参考にして適切な値を設定します。すでに QTDIR に値が設定されている場合
+は特に変更しなくともよいでしょう。
+http://doc.trolltech.com/4/qmake-manual.html
+
+Linux/g++ の例：
+ $ export QTDIR=/usr/lib/qt
+ $ export QMAKESPEC=linux-g++
+
+qmake コマンドの Qt バージョンを確認。4.2 以降であること。
+ $ qmake -v
+ QMake version 2.01a
+ Using Qt version 4.2.3 in /usr/local/qt-4.2.3/
+
+tar ball を展開したディレクトリで以下のコマンドを実行します。
+ $ qmake kimera.pro     ← Makefile の生成
+ $ make
+ $ su            ← 必要に応じて root になる
+ Password:       ← パスワード入力
+ # make install
+
+◎注意◎
+辞書ファイルをコピーする関係で、make install を行わないと正常に動作し
+ません。
+
+デフォルトでは、実行に関係するバイナリファイルや辞書ファイルを
+/usr/lib/kimera-(バージョン) へ、スタートスクリプトを /usr/bin へイン
+ストールしますが、必要に応じてインストールパス(それぞれ target.path,
+script.path)を指定することができます。上記の qmake コマンド実行時に指
+定します。
+例：
+ $ qmake "target.path=/usr/local/lib/kimera" "script.path=/usr/local/bin" kimera.pro
+
+表示されるメッセージを確認します。
+ Project MESSAGE: This project will be installed in /usr/local/lib/kimera
+ Project MESSAGE: Kimera startup script will be installed in /usr/local/bin
+
+Anthy 開発環境がなくとも qmake コマンドのパラメータに "no_anthy=1" を
+追加することで、正常にビルドすることができます。この場合、Anthy をかな
+漢字変換エンジンとして選択できなくなりますので、注意してください。
+例：
+ $ qmake "no_anthy=1" kimera.pro
+
+この "no_anthy=1" パラメータを追加していなければ、かな漢字変換エンジン
+を Canna/Anthy の中から選択できるようになります。この時のデフォルトか
+な漢字変換エンジンは Anthy になりますが、これを Canna に変更する場合は
+qmake コマンドのパラメータに "default_kanjiengine=Canna" を追加します。
+例：
+ $ qmake "default_kanjiengine=Canna" kimera.pro
+
+qmake を実行したらビルドしなおしてください。
+ $ make clean
+ $ make
+ # make install
+
+
+■ インストールファイル
+make install を実行すると、以下のファイルがコピーされます。
+ target.pathで指定したディレクトリ
+  ・kimera-bin
+  ・辞書ファイル
+
+ script.pathで指定したディレクトリ
+  ・kimera
+
+
+以上
