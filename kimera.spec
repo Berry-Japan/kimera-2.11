@@ -12,7 +12,7 @@ Source0:	%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:	qt >= 4.2.3
 BuildRequires:	qt-devel >= 4.2.3
-BuildArchitectures: i586
+#BuildArchitectures: i586
 
 %description
 Kimera is another input method for Japanese.
