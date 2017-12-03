@@ -23,7 +23,8 @@ It supports Whiz.
 %setup -q
 
 %build
-qmake-qt4 "target.path=/usr/lib/kimera" "script.path=/usr/bin" "no_anthy=1" kimera.pro
+#qmake-qt4 "target.path=/usr/lib/kimera" "script.path=/usr/bin" "no_anthy=1" kimera.pro
+qmake-qt4 "target.path=%{_libdir}/kimera" "script.path=/usr/bin" "no_anthy=1" kimera.pro
 make clean
 make %{?_smp_mflags}
 
